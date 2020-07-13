@@ -28,4 +28,4 @@
 
 ## GUI紙芝居
 ### アカウント登録画面
-<img src="form.png" width=50%>
+<img src="./image/form.png" width=50%>
