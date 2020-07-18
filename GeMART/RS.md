@@ -23,7 +23,7 @@
 下図(a)は、システム導入前の現状である。
 値段と栄養を考慮したうえでのメニューの決定や、その材料を調べるのは、自炊をする本人がWebサイトなどを使って行っていた。
 <div align="center">
-<img src="https://user-images.githubusercontent.com/67566479/86899534-19eba800-c145-11ea-8e6e-305082521f22.png" width=50% title="導入前">
+<img src="./RS_image/before.png" width=50% title="導入前">
 </div>
 <div style="text-align: center;">
 (a) システム導入前の現状
@@ -33,7 +33,7 @@
 ユーザはPCやスマホでWebブラウザを開き，システムにログインして、メニューの提案をうける。
 システムは提案するメニューを一覧表示し、材料費や栄養価でソートする機能をもつ。
 <div align="center">
-<img src="https://user-images.githubusercontent.com/67566479/86899571-2839c400-c145-11ea-9ed2-91ea3404528b.png" width=50% title="導入後">
+<img src="./RS_image/after.png" width=50% title="導入後">
 </div>
 <div style="text-align: center;">
 (b) システム導入による効果
