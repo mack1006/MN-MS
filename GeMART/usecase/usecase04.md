@@ -26,3 +26,8 @@
 - 3a.2 システムはソートがかけられていない状態のメニューを取得し，画面に表示する。
 
 ## GUI紙芝居
+### メニュー提案画面（ソート前）
+<img src="./image/sort_menu_before.png" width=50%>
+
+### メニュー提案画面（値段順でのソート後）
+<img src="./image/sort_menu_after.png" width=50%>
