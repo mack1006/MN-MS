@@ -32,3 +32,4 @@
 
 ## GUI紙芝居
 ### ログイン画面
+<img src="./image/login.png" width=50%>
