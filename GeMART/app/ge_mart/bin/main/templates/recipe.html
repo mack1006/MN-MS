@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+
+<body>
+    　<h1>レシピ紹介</h1>
+    <th:block th:object="${dishForm}">
+        <h3> [[${dishForm.name}]] </h3>
+        <img th:src="${dishForm.photoUrl}"></br>
+        材料: [[${dishForm.foodstuff}]] </br>
+        価格: [[${dishForm.price}]] 円 </br>
+        調理時間: [[${dishForm.cookingTime}]] </br>
+        <h4>調理方法</h4>
+        [[${dishForm.recipe}]]</br>
+    </th:block>
+    <a th:href=@{/propose}>メニューリストへ</a>
+</body>
+
+</html>

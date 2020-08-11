@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <title>てんぷれ</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>提案メニュー</h1>
+    <table class="tablist">
+        <tr th:each="d: ${dlist}">
+            <h3> [[${d.name}]] </h3>
+            <img th:src="${d.photoUrl}"></br>
+            材料: [[${d.foodstuff}]] </br>
+            価格: [[${d.price}]] 円 </br>
+            調理時間: [[${d.cookingTime}]] </br>
+            <a th:href=@{/recipe/{dishId}(dishId=${d.id})}>レシピへ</a>
+            <hr>
+        </tr>
+    </table>
+</body>
