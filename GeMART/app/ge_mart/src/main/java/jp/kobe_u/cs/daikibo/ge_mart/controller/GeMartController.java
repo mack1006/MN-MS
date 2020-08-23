@@ -55,13 +55,14 @@ public class GeMartController {
         DishForm dishForm = geMartService.getDishById(dishId);
         model.addAttribute("dishForm", dishForm);
         return "recipe";
-
     }
+
     @GetMapping("/add")
     String showAddForm(Model model){
         model.addAttribute("dishForm", new DishForm());  //空フォームをセット
         return "add";
     }
+    
     @PostMapping("/add")
     public String addDish(@ModelAttribute("dishForm") DishForm form, Model model){
 
@@ -77,4 +78,11 @@ public class GeMartController {
         return "/add";
     }
 
+    @GetMapping("/sort/price")
+    public String showDishMenuSortedByPrice( Model model ) {
+        List<Dish> dishes = geMartService.getDishMenuSortedByPrice();
+        
+        model.addAttribute( "dlist", dishes );
+        return "proposal.html";
+    }
 }

@@ -81,16 +81,16 @@
         </br>
     
         <hr>
-        </header>
+    </header>
     
-        <ul id="nav">
-            <li><a th:href=@{/}>タイトルに戻る</a></li>
-            <li><a th:href="@{/description}">GeMARTについて</a></li>
-            <li><a th:href="@{/removedstuff}">除外したい食材登録</a></li>
-            <li><a th:href="@{/propose}">提案メニュー一覧へ</a></li>
-        </ul>
+    <ul id="nav">
+        <li><a th:href=@{/}>タイトルに戻る</a></li>
+        <li><a th:href="@{/description}">GeMARTについて</a></li>
+        <li><a th:href="@{/removedstuff}">除外したい食材登録</a></li>
+        <li><a th:href="@{/propose}">提案メニュー一覧へ</a></li>
+    </ul>
 
-    　<h1>レシピ紹介</h1>
+    <h1>レシピ紹介</h1>
     <th:block th:object="${dishForm}">
         <h3> [[${dishForm.name}]] </h3>
         <img th:src="${dishForm.photoUrl}" width="50%" height="50%"></br>
@@ -100,8 +100,12 @@
         <h4>調理方法</h4>
         [[${dishForm.recipe}]]</br>
     </th:block>
+    
     </br>
+    <!--
     <a th:href=@{/propose} class="btn-flat-border">メニューリストへ</a>
+    -->
+    <a href="javascript:history.back();" class="btn-flat-border">メニューリストへ</a>
     </br></br>
 
     <hr>
