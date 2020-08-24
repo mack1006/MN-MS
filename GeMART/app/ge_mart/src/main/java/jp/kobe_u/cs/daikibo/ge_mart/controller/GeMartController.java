@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jp.kobe_u.cs.daikibo.ge_mart.entity.Dish;
 import jp.kobe_u.cs.daikibo.ge_mart.form.DishForm;
 import jp.kobe_u.cs.daikibo.ge_mart.service.GeMartService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 public class GeMartController {
     @Autowired
@@ -80,9 +82,12 @@ public class GeMartController {
 
     @GetMapping("/sort/price")
     public String showDishMenuSortedByPrice( Model model ) {
-        List<Dish> dishes = geMartService.getDishMenuSortedByPrice();
+        List<DishForm> sortedDishes = geMartService.getDishMenuSortedByPrice();
         
-        model.addAttribute( "dlist", dishes );
+        for (DishForm df : sortedDishes) {
+            log.info( df.getName() );
+        }
+        model.addAttribute( "dlist", sortedDishes );
         return "proposal.html";
     }
 }
