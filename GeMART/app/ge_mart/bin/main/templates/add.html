@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GeMART-AddDishForm</title>
+</head>
+
+<body>
+    <h1>レシピを追加する</h1>
+
+    <form th:action="@{/add}" th:object="${dishForm}" method="post">
+        <label for="name">名前：</label>
+        <input type="text" required th:field="*{name}" />
+        <label for="recipe">レシピ：</label>
+        <input type="text" required th:field="*{recipe}" />
+        <label for="foodstuff">食材：</label>
+        <input type="text" required th:field="*{foodstuff}" /><br>
+        <label for="price">価格：</label>
+        <input type="text" required th:field="*{price}" />
+        <label for="cookingTime">調理時間：</label>
+        <input type="text" required th:field="*{cookingTime}" />
+        <label for="photoUrl">画像URL：</label>
+        <input type="text" required th:field="*{photoUrl}" />
+        <input type="submit" value="追加する" />
+    </form>
+
+    <a th:href="@{/}">戻る</a>
+</body>
+</html>

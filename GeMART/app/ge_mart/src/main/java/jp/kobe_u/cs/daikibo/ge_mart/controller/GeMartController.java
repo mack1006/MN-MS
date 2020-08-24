@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jp.kobe_u.cs.daikibo.ge_mart.entity.Dish;
 import jp.kobe_u.cs.daikibo.ge_mart.form.DishForm;
 import jp.kobe_u.cs.daikibo.ge_mart.service.GeMartService;
 
@@ -42,6 +44,25 @@ public class GeMartController {
         model.addAttribute("dishForm", dishForm);
         return "recipe";
 
+    }
+    @GetMapping("/add")
+    String showAddForm(Model model){
+        model.addAttribute("dishForm", new DishForm());  //空フォームをセット
+        return "add";
+    }
+    @PostMapping("/add")
+    public String addDish(@ModelAttribute("dishForm") DishForm form, Model model){
+
+        Dish d = new Dish();
+        d.setName(form.getName());
+        d.setRecipe(form.getRecipe());
+        d.setRecipe(form.getRecipe());
+        d.setFoodstuff(form.getFoodstuff());
+        d.setCookingTime(form.getCookingTime());
+        d.setPrice((int)form.getPrice());
+        d.setPhotoUrl(form.getPhotoUrl());
+        geMartService.addDish(d);
+        return "/add";
     }
 
 }

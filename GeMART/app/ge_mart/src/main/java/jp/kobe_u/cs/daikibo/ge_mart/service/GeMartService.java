@@ -34,4 +34,8 @@ public class GeMartService {
         return dishForm;
     }
 
+    public Dish addDish(Dish d) {
+        return dishRepository.save(d);
+    }
+
 }
