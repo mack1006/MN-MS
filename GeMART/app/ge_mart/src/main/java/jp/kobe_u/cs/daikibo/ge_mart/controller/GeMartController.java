@@ -34,6 +34,18 @@ public class GeMartController {
         return "proposal.html";
     }
 
+        // 各ページの「GeMARTについて」を押して説明の表示をする
+        @GetMapping("/description")
+    public String showDescription(Model model) {
+        return "description.html";
+    }
+
+                // 各ページの「GeMARTについて」を押して説明の表示をする
+    @GetMapping("/removedstuff")
+    public String showRemovedstuffregister(Model model) {
+        return "removedstuffregister.html";
+    }
+
     @GetMapping("/recipe/{dishId}")
     public String showRecipe(@PathVariable Long dishId, Model model) {
         // 該当IDの料理をDBからとってきてフォームに。

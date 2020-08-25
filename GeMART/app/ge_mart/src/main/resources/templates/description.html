@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title>レシピの提案</title>
+    <title>GeMARTについて</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <style>
         body {
@@ -94,22 +94,18 @@
 
 
     <main>
-    <h1>提案メニュー</h1>
-
-    <table class="tablist">
-        <tr th:each="d: ${dlist}">
-            <div>
-            <h3> [[${d.name}]] </h3>
-            <img th:src="${d.photoUrl}" width="50%" height="75%"></br>
-            材料: [[${d.foodstuff}]] </br>
-            価格: [[${d.price}]] 円 </br>
-            調理時間: [[${d.cookingTime}]] </br>
+    <h1>GeMARTについて</h1>
+        <p>
+            GeMARTは、栄養バランスを考慮した料理のレシピや材料，材料費などを提案して、</br>
+            一人暮らしの自炊の負担を軽減することを目的とし考案されました。</br>
+            <img th:src="@{/before.png}" width="50%" height="75%">
             </br>
-            <a th:href=@{/recipe/{dishId}(dishId=${d.id})} class="btn-flat-border">レシピを見る</a>
-            </div>
-            <hr>
-        </tr>
-    </table>
+            栄養バランスを考慮した料理メニューを提案して，そのレシピや材料，
+            材料費を提示することにより，自炊の負担を軽減します。</br>
+            <img th:src="@{/after.png}" width="60%" height="75%"> </br>
+            尚、GeMARTという名前は激安(G)栄養(E)満点(MA)レシピ(R)提案(T)の頭文字を取り,名付けられました。
+        </p>
+    </br>
     </main>
 
     <footer>

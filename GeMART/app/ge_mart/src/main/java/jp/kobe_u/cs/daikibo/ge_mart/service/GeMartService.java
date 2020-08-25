@@ -18,19 +18,19 @@ public class GeMartService {
 
     // リポジトリから全部のメニューを取ってくる
     public List<DishForm> getProposal() {
-        Iterable<Dish> dishListAll = dishRepository.findAll();
+        final Iterable<Dish> dishListAll = dishRepository.findAll();
         // イテラブル型なので拡張forでList型に
-        List<DishForm> dishFormListAll = new ArrayList<DishForm>();
-        for (Dish d : dishListAll) {
+        final List<DishForm> dishFormListAll = new ArrayList<DishForm>();
+        for (final Dish d : dishListAll) {
             dishFormListAll.add(DishForm.toDishForm(d));
         }
         return dishFormListAll;
     }
 
-    public DishForm getDishById(Long id) {
+    public DishForm getDishById(final Long id) {
         // ふつうにIDでとってくる
-        Dish dish = dishRepository.findById(id).orElseThrow(() -> new GeMartException("No such Dish"));
-        DishForm dishForm = DishForm.toDishForm(dish);
+        final Dish dish = dishRepository.findById(id).orElseThrow(() -> new GeMartException("No such Dish"));
+        final DishForm dishForm = DishForm.toDishForm(dish);
         return dishForm;
     }
 

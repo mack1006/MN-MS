@@ -21,14 +21,46 @@
             font-size: 14px;
         }
 
+        .btn-flat-border {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: midnightblue;
+        border: solid 2px midnightblue;
+        border-radius: 3px;
+        transition: .4s;
+        }
+
+        .btn-flat-border:hover {
+        background: midnightblue;
+        color: white;
+        }
+
+        footer{
+        background-color: #ccc;
+        height: 20px;
+        font-style: oblique;
+        font-family: Arial;
+        color: #000033;
+        }
+
     </style>
 </head>
 
 <body>
     <h1>GeMART</h1>
-    <img th:src="@{/GeMART_title2.png}">
+    <img th:src="@{/GeMART_title2.png}" width="50%" height="50%">
     <p>あなたに合った自炊の料理の提案をします</p>
-    <a th:href="@{/propose}">はじめる</a>
+
+    <a th:href="@{/propose}" class="btn-flat-border">はじめる</a>
+    </br></br>
     <a th:href="@{/add}">レシピの追加</a>
+    </br></br>
+
+    <hr>
+    <footer>
+        GeMART 2020 Kobe university MN-MS
+    <hr>
+    </footer>
 </body>
 </html>

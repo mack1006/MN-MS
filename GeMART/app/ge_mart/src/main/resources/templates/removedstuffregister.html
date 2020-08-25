@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title>レシピの提案</title>
+    <title>除外したい食材の登録</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <style>
         body {
@@ -94,22 +94,11 @@
 
 
     <main>
-    <h1>提案メニュー</h1>
-
-    <table class="tablist">
-        <tr th:each="d: ${dlist}">
-            <div>
-            <h3> [[${d.name}]] </h3>
-            <img th:src="${d.photoUrl}" width="50%" height="75%"></br>
-            材料: [[${d.foodstuff}]] </br>
-            価格: [[${d.price}]] 円 </br>
-            調理時間: [[${d.cookingTime}]] </br>
-            </br>
-            <a th:href=@{/recipe/{dishId}(dishId=${d.id})} class="btn-flat-border">レシピを見る</a>
-            </div>
-            <hr>
-        </tr>
-    </table>
+    <h1>除外したい食材登録</h1>
+        <p>
+            このページでは除外したい食材の登録ができます。(予定 未実装)
+        </p>
+    </br>
     </main>
 
     <footer>
