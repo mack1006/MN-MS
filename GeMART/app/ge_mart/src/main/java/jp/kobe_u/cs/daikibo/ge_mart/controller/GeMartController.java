@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jp.kobe_u.cs.daikibo.ge_mart.entity.Dish;
 import jp.kobe_u.cs.daikibo.ge_mart.form.DishForm;
 import jp.kobe_u.cs.daikibo.ge_mart.service.GeMartService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 public class GeMartController {
     @Autowired
@@ -55,13 +57,14 @@ public class GeMartController {
         DishForm dishForm = geMartService.getDishById(dishId);
         model.addAttribute("dishForm", dishForm);
         return "recipe";
-
     }
+
     @GetMapping("/add")
     String showAddForm(Model model){
         model.addAttribute("dishForm", new DishForm());  //空フォームをセット
         return "add";
     }
+    
     @PostMapping("/add")
     public String addDish(@ModelAttribute("dishForm") DishForm form, Model model){
 
@@ -77,4 +80,14 @@ public class GeMartController {
         return "/add";
     }
 
+    @GetMapping("/sort/price")
+    public String showDishMenuSortedByPrice( Model model ) {
+        List<DishForm> sortedDishes = geMartService.getDishMenuSortedByPrice();
+        
+        for (DishForm df : sortedDishes) {
+            log.info( df.getName() );
+        }
+        model.addAttribute( "dlist", sortedDishes );
+        return "proposal.html";
+    }
 }

@@ -38,4 +38,14 @@ public class GeMartService {
         return dishRepository.save(d);
     }
 
+    public List<DishForm> getDishMenuSortedByPrice() {
+        Iterable<Dish> sortedDishes = dishRepository.findAllByOrderByPrice(); // Sort済みのやつを取ってくるヤツに後で変更
+        List<DishForm> dishList = new ArrayList<DishForm>();
+
+        for ( Dish d : sortedDishes ) {
+            dishList.add( DishForm.toDishForm(d) );
+        }
+
+        return dishList;
+    }
 }
