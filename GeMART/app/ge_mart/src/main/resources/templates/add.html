@@ -4,6 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>GeMART-AddDishForm</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Meiryo;
+            text-align: center;
+        }
+        h1 {
+            color: midnightblue;
+        }
+
+        p{
+            color: #474b42;
+        }
+        a {
+            font-size: 14px;
+        }
+
+        .btn-flat-border {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: midnightblue;
+        border: solid 2px midnightblue;
+        border-radius: 3px;
+        transition: .4s;
+        }
+
+        .btn-flat-border:hover {
+        background: midnightblue;
+        color: white;
+        }
+
+        footer{
+        background-color: #ccc;
+        height: 20px;
+        font-style: oblique;
+        font-family: Arial;
+        color: #000033;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -12,19 +53,32 @@
     <form th:action="@{/add}" th:object="${dishForm}" method="post">
         <label for="name">名前：</label>
         <input type="text" required th:field="*{name}" />
+        </br>
         <label for="recipe">レシピ：</label>
         <input type="text" required th:field="*{recipe}" />
+        </br>
         <label for="foodstuff">食材：</label>
         <input type="text" required th:field="*{foodstuff}" /><br>
+        </br>
         <label for="price">価格：</label>
         <input type="text" required th:field="*{price}" />
+        </br>
         <label for="cookingTime">調理時間：</label>
         <input type="text" required th:field="*{cookingTime}" />
+        </br>
         <label for="photoUrl">画像URL：</label>
         <input type="text" required th:field="*{photoUrl}" />
+        </br>
         <input type="submit" value="追加する" />
     </form>
+    </br>
 
     <a th:href="@{/}">戻る</a>
+    </br></br>
+    <hr>
+    <footer>
+        GeMART 2020 Kobe university MN-MS
+    <hr>
+    </footer>
 </body>
 </html>
