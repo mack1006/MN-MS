@@ -21,10 +21,11 @@ MN-MS
 - [設計クラス](./GeMART/design_class)
 
 ### 第6回
-- [システムの実装予定箇所](./GeMART/app)
+- [システムの実装予定箇所](./GeMART/app/implementation_contents.md)
 
 ### 第7回
-- 
+- [実装したアプリケーション](./GeMART/app/ge_mart)
+- [アプリケーションの操作説明](./GeMART/app/README.md)
 
 ## 松原圭亮
 - 研究室 : 滝口研究室
